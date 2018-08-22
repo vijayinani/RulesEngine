@@ -36,7 +36,7 @@ public class RequestProcessor {
         System.out.println(getResult(input12, rulesCache));
     }
 
-    private static String getResult(String input, Map<String, Set<Node>> rulesCache) {
+    public static String getResult(String input, Map<String, Set<Node>> rulesCache) {
         String[] inputSplit = input.split(",");
         Set<Node> current = rulesCache.get(inputSplit[0]);
         if (current == null) {
@@ -63,7 +63,7 @@ public class RequestProcessor {
         return current.stream().filter(node::equals).findAny().get().getChildren();
     }
 
-    private static Map<String, Set<Node>> loadRules() {
+    public static Map<String, Set<Node>> loadRules() {
 
         Map<String, Set<Node>> rulesCache = new HashMap<>();
 
