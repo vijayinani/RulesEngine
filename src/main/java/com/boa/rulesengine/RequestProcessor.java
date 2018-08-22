@@ -98,7 +98,7 @@ public class RequestProcessor {
             Set<Node> nodes = rulesCache.get(rulesetId);
 
             String[] values = priorityValues.split(",");
-            for (int i = 0; i < values.length; i++) {
+            for (int i = 0; i < values.length - 1; i++) {
 
                 Node node = new Node();
                 node.setValue(values[i]);
