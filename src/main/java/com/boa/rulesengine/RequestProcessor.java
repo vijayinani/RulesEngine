@@ -7,35 +7,6 @@ import java.util.Map;
 import java.util.Set;
 
 public class RequestProcessor {
-
-    public static void main(String[] args) {
-        Map<String, Set<Node>> rulesCache = loadRules();
-        String input1 = "Tax,NSE,2001,*,AA,*";
-        String input2 = "Tax,*,3001,IN,AB,CD";
-        String input3 = "Tax,*,*,*,*,*";
-        String input4 = "Instrument,NSDQ,1001,US";
-        String input5 = "Instrument,NYSE,1001,US";
-        String input6 = "Instrument,BSE,1001,*";
-        String input7 = "Instrument,BSE,*,*";
-        String input8 = "Instrument,*,2001,IN";
-        String input9 = "Instrument,*,*,US";
-        String input10 = "Instrument,*,*,*";
-        String input11 = "Instrument,NSE,2001,*";
-        String input12 = "Feex,NSE,2001,*";
-        System.out.println(getResult(input1, rulesCache));
-        System.out.println(getResult(input2, rulesCache));
-        System.out.println(getResult(input3, rulesCache));
-        System.out.println(getResult(input4, rulesCache));
-        System.out.println(getResult(input5, rulesCache));
-        System.out.println(getResult(input6, rulesCache));
-        System.out.println(getResult(input7, rulesCache));
-        System.out.println(getResult(input8, rulesCache));
-        System.out.println(getResult(input9, rulesCache));
-        System.out.println(getResult(input10, rulesCache));
-        System.out.println(getResult(input11, rulesCache));
-        System.out.println(getResult(input12, rulesCache));
-    }
-
     public static String getResult(String input, Map<String, Set<Node>> rulesCache) {
         String[] inputSplit = input.split(",");
         Set<Node> current = rulesCache.get(inputSplit[0]);
