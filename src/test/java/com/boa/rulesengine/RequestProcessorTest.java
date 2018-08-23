@@ -31,7 +31,7 @@ public class RequestProcessorTest {
         String input9 = "Instrument,*,*,US";
         String input10 = "Instrument,*,*,*";
         String input11 = "Instrument,NSE,2001,*";
-        String input12 = "Feex,NSE,2001,*";
+        String input12 = "Fees,NSE,2001,*";
         assertEquals("100", RequestProcessor.getResult(input1, rulesCache));
         assertEquals("90", RequestProcessor.getResult(input2, rulesCache));
         assertEquals("50", RequestProcessor.getResult(input3, rulesCache));
