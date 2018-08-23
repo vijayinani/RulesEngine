@@ -32,6 +32,7 @@ public class RequestProcessorTest {
         String input10 = "Instrument,*,*,*";
         String input11 = "Instrument,NSE,2001,*";
         String input12 = "Fees,NSE,2001,*";
+        String input13 = "Fees,NSE,*,*";
         assertEquals("100", RequestProcessor.getResult(input1, rulesCache));
         assertEquals("90", RequestProcessor.getResult(input2, rulesCache));
         assertEquals("50", RequestProcessor.getResult(input3, rulesCache));
@@ -44,5 +45,6 @@ public class RequestProcessorTest {
         assertEquals("20", RequestProcessor.getResult(input10, rulesCache));
         assertEquals("20", RequestProcessor.getResult(input11, rulesCache));
         assertNull(RequestProcessor.getResult(input12, rulesCache));
+        assertNull(RequestProcessor.getResult(input13, rulesCache));
     }
 }
