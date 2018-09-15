@@ -34,6 +34,7 @@ class RequestProcessorSpec extends Specification {
         "Instrument,NSE,2001,*"   | "20"
         "Fees,NSE,2001,*"         | null
         "Fees,NSE,*,*"            | null
+        "Fees,NSE,*,*"            | null
     }
 
 //    @Unroll
