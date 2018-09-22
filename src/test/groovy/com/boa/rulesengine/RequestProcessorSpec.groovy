@@ -1,5 +1,6 @@
 package com.boa.rulesengine
 
+import spock.lang.Ignore
 import spock.lang.Shared
 import spock.lang.Specification
 import spock.lang.Unroll
@@ -9,12 +10,12 @@ class RequestProcessorSpec extends Specification {
     @Shared
     private Map<String, Set<Node>> rulesCache
 
-
-    def setupSpec() {
-        rulesCache = RequestProcessor.loadRules()
-    }
+//    def setupSpec() {
+//        rulesCache = RequestProcessor.loadRules()
+//    }
 
     @Unroll
+    @Ignore
     void "test the rule engine #input #output"() {
         expect:
         output == RequestProcessor.getResult(input, rulesCache)
@@ -37,15 +38,16 @@ class RequestProcessorSpec extends Specification {
         "Fees,NSE,*,*"            | null
     }
 
-//    @Unroll
-//    public void "test the rule engine for exception #input"() {
-//        when:
-//        RequestProcessor.getResult(input, rulesCache)
-//
-//        then:
-//        thrown(Exception)
-//
-//        where:
-//        input << ["vijay"]
-//    }
+    @Unroll
+    @Ignore
+    void "test the rule engine for exception #input"() {
+        when:
+        RequestProcessor.getResult(input, rulesCache)
+
+        then:
+        thrown(Exception)
+
+        where:
+        input << ["vijay"]
+    }
 }
